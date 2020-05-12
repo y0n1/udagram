@@ -1,6 +1,6 @@
 version: "3"
 services:
-  reverseproxy:
+  reverse-proxy:
       image: y0n1/udagram-api-gateway
       ports:
           - 8080:8080
@@ -34,7 +34,7 @@ services:
       AWS_BUCKET: $AWS_BUCKET
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8100"
-  frontend:
+  front-end:
     image: y0n1/udagram-front-end
     ports:
       - "8100:80"
