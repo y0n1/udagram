@@ -1,19 +1,20 @@
-FROM node:12 as deps
 # Install app dependencies
+FROM node:12 as deps
 WORKDIR /tmp
-COPY package.json ./
-COPY yarn.lock ./
+COPY package.json .
+COPY yarn.lock .
 RUN yarn install --frozen-lockfile 
 
-FROM deps as builder
 # Bundle app source
+FROM deps as builder
 WORKDIR /usr/src/app
-COPY . .
 COPY --from=deps /tmp/node_modules ./node_modules
+COPY . .
 RUN  yarn run tsc
 
-FROM builder
+# artifact
+FROM node:12
 WORKDIR /usr/src/app
-COPY --from=builder /usr/src/app/www .
+COPY --from=builder /usr/src/app/www ./www
 EXPOSE 8080
 CMD [ "node", "./www/server.js" ]
