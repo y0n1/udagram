@@ -4,10 +4,8 @@ import { sequelize } from './sequelize';
 import { IndexRouter } from './controllers/v1/index.router';
 
 import bodyParser from 'body-parser';
-import { config } from './config/config';
+import { config } from '../config';
 import { V1_MODELS } from './controllers/v1/model.index';
-
-const c = config.dev;
 
 (async () => {
   sequelize.addModels(V1_MODELS);
@@ -20,7 +18,7 @@ const c = config.dev;
 
   //CORS Should be restricted
   app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", c.url);
+    res.header("Access-Control-Allow-Origin", config.url);
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
     next();
   });
@@ -35,7 +33,7 @@ const c = config.dev;
 
   // Start the Server
   app.listen( port, () => {
-      console.log( `server running ` + c.url );
+      console.log( `server running ` + config.url );
       console.log( `press CTRL+C to stop server` );
   } );
 })();
