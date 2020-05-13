@@ -1,8 +1,8 @@
 {
+  "private": true,
   "name": "udagram-front-end",
   "version": "1.0.0",
-  "private": true,
-  "author": "y0n1 y0n1@outlook.com",
+  "description": "Udagram fron-end",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -52,6 +52,5 @@
     "ts-node": "~8.0.0",
     "tslint": "~5.12.0",
     "typescript": "~3.1.6"
-  },
-  "description": "Udagram fron-end"
+  }
 }
