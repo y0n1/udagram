@@ -4,7 +4,7 @@ import { sequelize } from './sequelize';
 import { IndexRouter } from './controllers/v1/index.router';
 
 import bodyParser from 'body-parser';
-import { config } from '../config';
+import { config } from './config';
 import { V1_MODELS } from './controllers/v1/model.index';
 
 (async () => {

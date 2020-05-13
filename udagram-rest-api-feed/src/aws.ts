@@ -1,5 +1,5 @@
 import AWS = require("aws-sdk");
-import { config } from "../config";
+import { config } from "./config";
 
 //Configure AWS
 var credentials = new AWS.SharedIniFileCredentials({ profile: "default" });
