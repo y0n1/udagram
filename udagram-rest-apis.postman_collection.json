@@ -10,7 +10,7 @@
       "name": "Public",
       "item": [
         {
-          "name": "/api/v0/feed",
+          "name": "/api/v1/feed",
           "event": [
             {
               "listen": "test",
@@ -42,16 +42,16 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{host}}/api/v0/feed",
+              "raw": "{{host}}/api/v1/feed",
               "host": ["{{host}}"],
-              "path": ["api", "v0", "feed"]
+              "path": ["api", "v1", "feed"]
             },
             "description": "Get all the items in the feed"
           },
           "response": []
         },
         {
-          "name": "/api/v0/feed/:id",
+          "name": "/api/v1/feed/:id",
           "event": [
             {
               "listen": "test",
@@ -83,9 +83,9 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{host}}/api/v0/feed/:id",
+              "raw": "{{host}}/api/v1/feed/:id",
               "host": ["{{host}}"],
-              "path": ["api", "v0", "feed", ":id"],
+              "path": ["api", "v1", "feed", ":id"],
               "query": [
                 {
                   "key": "id",
@@ -104,7 +104,7 @@
           },
           "response": [
             {
-              "name": "/api/v0/feed/:id",
+              "name": "/api/v1/feed/:id",
               "originalRequest": {
                 "method": "GET",
                 "header": [],
@@ -113,9 +113,9 @@
                   "raw": ""
                 },
                 "url": {
-                  "raw": "{{host}}/api/v0/feed/:id",
+                  "raw": "{{host}}/api/v1/feed/:id",
                   "host": ["{{host}}"],
-                  "path": ["api", "v0", "feed", ":id"],
+                  "path": ["api", "v1", "feed", ":id"],
                   "query": [
                     {
                       "key": "id",
@@ -166,7 +166,7 @@
           ]
         },
         {
-          "name": "/api/v0/user/auth valid registration",
+          "name": "/api/v1/user/auth valid registration",
           "event": [
             {
               "listen": "test",
@@ -205,15 +205,15 @@
               "raw": "{\n\t\"email\":\"hello@gmail.com\",\n\t\"password\":\"fancypass\"\n}"
             },
             "url": {
-              "raw": "{{host}}/api/v0/users/auth",
+              "raw": "{{host}}/api/v1/users/auth",
               "host": ["{{host}}"],
-              "path": ["api", "v0", "users", "auth"]
+              "path": ["api", "v1", "users", "auth"]
             }
           },
           "response": []
         },
         {
-          "name": "/api/v0/user/auth invalid registration",
+          "name": "/api/v1/user/auth invalid registration",
           "event": [
             {
               "listen": "test",
@@ -253,15 +253,15 @@
               "raw": "{\n    \"password\": \"fancypass\"\n}"
             },
             "url": {
-              "raw": "{{host}}/api/v0/users/auth",
+              "raw": "{{host}}/api/v1/users/auth",
               "host": ["{{host}}"],
-              "path": ["api", "v0", "users", "auth"]
+              "path": ["api", "v1", "users", "auth"]
             }
           },
           "response": []
         },
         {
-          "name": "/api/v0/user/auth/login valid",
+          "name": "/api/v1/user/auth/login valid",
           "event": [
             {
               "listen": "test",
@@ -304,15 +304,15 @@
               "raw": "{\n\t\"email\":\"hello@gmail.com\",\n\t\"password\":\"fancypass\"\n}"
             },
             "url": {
-              "raw": "{{host}}/api/v0/users/auth/login",
+              "raw": "{{host}}/api/v1/users/auth/login",
               "host": ["{{host}}"],
-              "path": ["api", "v0", "users", "auth", "login"]
+              "path": ["api", "v1", "users", "auth", "login"]
             }
           },
           "response": []
         },
         {
-          "name": "/api/v0/user/auth/login invalid",
+          "name": "/api/v1/user/auth/login invalid",
           "event": [
             {
               "listen": "test",
@@ -352,9 +352,9 @@
               "raw": "{}"
             },
             "url": {
-              "raw": "{{host}}/api/v0/users/auth/login",
+              "raw": "{{host}}/api/v1/users/auth/login",
               "host": ["{{host}}"],
-              "path": ["api", "v0", "users", "auth", "login"]
+              "path": ["api", "v1", "users", "auth", "login"]
             }
           },
           "response": []
@@ -365,7 +365,7 @@
       "name": "Unauthorized",
       "item": [
         {
-          "name": "/api/v0/feed unauthorized",
+          "name": "/api/v1/feed unauthorized",
           "event": [
             {
               "listen": "test",
@@ -392,9 +392,9 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{host}}/api/v0/feed",
+              "raw": "{{host}}/api/v1/feed",
               "host": ["{{host}}"],
-              "path": ["api", "v0", "feed"]
+              "path": ["api", "v1", "feed"]
             },
             "description": "Post a new item to the feed"
           },
@@ -406,7 +406,7 @@
       "name": "Authorized",
       "item": [
         {
-          "name": "/api/v0/feed invalid",
+          "name": "/api/v1/feed invalid",
           "event": [
             {
               "listen": "test",
@@ -445,16 +445,16 @@
               "raw": "{}"
             },
             "url": {
-              "raw": "{{host}}/api/v0/feed",
+              "raw": "{{host}}/api/v1/feed",
               "host": ["{{host}}"],
-              "path": ["api", "v0", "feed"]
+              "path": ["api", "v1", "feed"]
             },
             "description": "Post a new item to the feed"
           },
           "response": []
         },
         {
-          "name": "/api/v0/feed authorized Copy",
+          "name": "/api/v1/feed authorized Copy",
           "event": [
             {
               "listen": "test",
@@ -493,9 +493,9 @@
               "raw": "{\n    \"caption\": \"Hello\",\n    \"url\": \"test.jpg\"\n}"
             },
             "url": {
-              "raw": "{{host}}/api/v0/feed",
+              "raw": "{{host}}/api/v1/feed",
               "host": ["{{host}}"],
-              "path": ["api", "v0", "feed"]
+              "path": ["api", "v1", "feed"]
             },
             "description": "Post a new item to the feed"
           },

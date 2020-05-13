@@ -1,16 +1,16 @@
 import express from 'express';
 import { sequelize } from './sequelize';
 
-import { IndexRouter } from './controllers/v0/index.router';
+import { IndexRouter } from './controllers/v1/index.router';
 
 import bodyParser from 'body-parser';
 import { config } from './config/config';
-import { V0MODELS } from './controllers/v0/model.index';
+import { V1_MODELS } from './controllers/v1/model.index';
 
 const c = config.dev;
 
 (async () => {
-  await sequelize.addModels(V0MODELS);
+  sequelize.addModels(V1_MODELS);
   await sequelize.sync();
 
   const app = express();
@@ -25,11 +25,11 @@ const c = config.dev;
     next();
   });
 
-  app.use('/api/v0/', IndexRouter)
+  app.use('/api/v1/', IndexRouter)
 
   // Root URI call
   app.get( "/", async ( req, res ) => {
-    res.send( "/api/v0/" );
+    res.send( "/api/v1/" );
   } );
   
 
