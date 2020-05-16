@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "automation"
+		},
+		{
+			"path": "deployment"
+		},
+		{
+			"path": "mock"
+		},
+		{
+			"path": "udagram-api-gateway"
+		},
+		{
+			"path": "udagram-front-end"
+		},
+		{
+			"path": "udagram-rest-api-feed"
+		},
+		{
+			"path": "udagram-rest-api-user"
+		}
+	]
+}
