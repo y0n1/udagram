@@ -1,5 +1,5 @@
 # Udagram
-This project is an Instagram clone.
+An Instagram clone.
 
-## Infra
+## Design Overview
 ![](images/udagram-diag.jpg)
