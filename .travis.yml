@@ -1,0 +1,6 @@
+language: minimal
+
+services: docker
+
+install:
+  - docker-compose -f docker-compose-build.yml build --parallel 
