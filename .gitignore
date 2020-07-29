@@ -1,0 +1,4 @@
+env.sh
+aws-secret.yaml
+env-secret.yaml
+.vscode/settings.json
