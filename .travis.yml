@@ -1,0 +1,16 @@
+language: minimal
+
+services: docker
+
+before_install:
+  - ./ci/scripts/install-dependencies.sh
+
+script:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - ./ci/scripts/build.sh
+
+deploy:
+  provider: script
+  script: ./ci/scripts/publish.sh
+  on:
+    branch: master
