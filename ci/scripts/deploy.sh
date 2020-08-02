@@ -1,9 +1,10 @@
 #!/bin/bash
 
+set -ev
 
-kubectl apply -f ./deployment/k8s/aws-secret.yaml && \
-kubectl apply -f ./deployment/k8s/env-secret.yaml && \
-kubectl apply -f ./deployment/k8s/env-configmap.yaml && \
+kubectl apply -f ./ci/k8s/aws-secret.yaml && \
+kubectl apply -f ./ci/k8s/env-secret.yaml && \
+kubectl apply -f ./ci/k8s/env-configmap.yaml && \
 
 kubectl apply -f ./user-api/k8s/deployment.yaml && \
 kubectl apply -f ./user-api/k8s/service.yaml && \

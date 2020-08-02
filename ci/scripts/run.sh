@@ -1,5 +1,7 @@
 #! /bin/bash
 
+set -ev
+
 if [[ $1 = "local" ]]; then
     docker run \
         --rm \
@@ -13,4 +15,4 @@ if [[ $1 = "local" ]]; then
         postgres
 fi
 
-docker-compose -f ./deployment/docker/docker-compose.yaml up
+docker-compose -f ./ci/docker/docker-compose.yaml up
