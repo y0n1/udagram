@@ -13,6 +13,7 @@ then
     chmod +x docker-compose
     sudo mv docker-compose /usr/local/bin
 fi
+docker-compose --version
 
 KUBECTL_VERSION_REGEX=$(echo $KUBECTL_VERSION | sed -E 's/\./\\\./g')
 if [[ $1 = "ci" ]] && [[ ! $(kubectl version --client --short) =~ $KUBECTL_VERSION_REGEX ]]
@@ -21,3 +22,4 @@ then
     chmod +x ./kubectl
     sudo mv ./kubectl /usr/local/bin/kubectl
 fi
+kubectl version --client --short

@@ -6,8 +6,8 @@ before_install:
   - ./ci/scripts/install-dependencies.sh
 
 script:
-  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-  - ./ci/scripts/build.sh
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker-compose -f ./ci/docker/build.docker-compose.yaml build --parallel
 
 deploy:
   provider: script
